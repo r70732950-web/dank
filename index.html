@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>دەنگێ بادینی | ستۆدیۆیا دەنگی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <h1>دەنگێ بادینی</h1>
+      </div>
+      <span id="modeBadge" class="badge">تاقیکرن</span>
+    </header>
+
+    <section class="panel">
+      <div class="panel-head">
+        <span class="label">دەنگەکی هەلبژێرە</span>
+        <span id="voiceCount" class="muted">0 دەنگ</span>
+      </div>
+      <div id="voiceCarousel" class="carousel"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <span class="label">تێکستێ خۆ بنڤیسە</span>
+        <div class="quick-actions">
+          <button type="button" id="sampleBtn" class="chip-btn">نموونە</button>
+          <button type="button" id="clearBtn" class="chip-btn">پاقژکرن</button>
+        </div>
+      </div>
+
+      <textarea id="textInput" rows="5" placeholder="سڵاڤ، ئەڤە تاقیکرنا دەنگێ کوردی بادینی یە..." maxlength="1000"></textarea>
+
+      <div class="textarea-foot">
+        <span id="charCount" class="muted">0 / 1000</span>
+        <span id="fixedNote" class="fixed-note hidden">تێکست هاتە ڕاستڤەکرن</span>
+      </div>
+
+      <div class="controls">
+        <div class="control-group">
+          <label for="speedSelect">لەزاتی</label>
+          <select id="speedSelect">
+            <option value="0.85">0.85x</option>
+            <option value="1" selected>1.0x</option>
+            <option value="1.15">1.15x</option>
+            <option value="1.3">1.3x</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="formatSelect">جۆر</label>
+          <select id="formatSelect">
+            <option value="mp3" selected>MP3</option>
+            <option value="wav">WAV</option>
+          </select>
+        </div>
+
+        <button id="speakBtn" class="btn-primary">
+          <span class="btn-text">دەنگ چێکە</span>
+          <span class="spinner hidden"></span>
+        </button>
+      </div>
+    </section>
+
+    <section id="playerCard" class="panel player hidden">
+      <button id="playPauseBtn" class="play-btn" aria-label="لێدان">▶</button>
+      <div class="track">
+        <div class="track-top">
+          <span id="playerVoice" class="player-voice">ئازاد</span>
+          <span id="playerTime" class="muted">0:00 / 0:00</span>
+        </div>
+        <input id="seekBar" type="range" min="0" max="100" value="0">
+      </div>
+      <a id="downloadBtn" class="dl-btn" download="badini-voice.mp3">داگرتن</a>
+      <audio id="audioEl" preload="metadata"></audio>
+    </section>
+
+    <div id="toast" class="toast hidden"></div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
