@@ -1,7 +1,7 @@
 window.APP_CONFIG = {
-  DEMO_MODE: true, // دەمێ سێرڤەر ئامادە بوو بکە false
-  API_URL: 'https://api.badinivoice.com', // لینکێ سێرڤەرێ تە یێ داهاتی
-  TURNSTILE_SITEKEY: '', // ئەگەر تە Cloudflare Turnstile دانا، کلیلا وی ل ڤێرە دابنێ
+  DEMO_MODE: false,
+  API_URL: 'https://cyber-sims-organisation-viking.trycloudflare.com',
+  TURNSTILE_SITEKEY: '',
   MAX_CHARS: 1000,
   DEMO_VOICES: [
     { id: 'azad', name: 'ئازاد', kind: 'زەلام', tag: 'سافی • هەواڵ', free: true },
